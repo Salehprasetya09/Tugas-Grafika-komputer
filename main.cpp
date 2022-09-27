@@ -12,8 +12,6 @@
  * using the + and - keys.
  */
 
-// PROGRAM MENGGAMBAR GARIS
-
 #include <windows.h>
 #ifdef _APPLE_
 #include <GLUT/glut.h>
@@ -28,12 +26,21 @@ void draw()
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(1.0, 1.0, 1.0);
 
-    glLineWidth(2.5);
-    glBegin(GL_LINES);
+    glPointSize(8.0);
+    glBegin(GL_POINTS);
 
-    glColor3f(0.5, 1.0, 0.5);   //Warna Hijau Muda
-    glVertex3f(0.2, 0.5, 0.0);  // Koordinat Titik 1
-    glVertex3f(0.8, 0.5, 0.0);  // Koordinat Titik 2
+    glColor3f(1.0, 1.0, 1.0);         //Warna Putih
+    glVertex3f(0.3, 0.4, 0.0);
+    glColor3f(0.75, 0.75, 0.75);      //Warna Abu-Abu
+    glVertex3f(0.4, 0.5, 1.0);
+    glColor3f(1.0, 1.0, 0.0);         //Warna Kuning
+    glVertex3f(0.7, 0.4, 0.0);
+    glColor3f(0.0, 1.0, 1.0);         //Warna Tosca
+    glVertex3f(0.4, 0.6, 0.0);
+    glColor3f(0.5, 1.0, 0.5);         //Warna Hijau Muda
+    glVertex3f(0.2, 0.7, 0.0);
+    glColor3f(1.0, 0.43, 0.78);       //Warna Pink
+    glVertex3f(0.6, 0.7, 0.0);
 
     glEnd();
     glFlush();
@@ -50,8 +57,8 @@ void Initialize()
 int main(int iArgc, char** cppArgv){
     glutInit(&iArgc, cppArgv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowSize(250, 250);
-    glutInitWindowPosition(200, 200);
+    glutInitWindowSize(250, 230);
+    glutInitWindowPosition(200, 210);
     glutCreateWindow("Point");
     Initialize();
     glutDisplayFunc(draw);
